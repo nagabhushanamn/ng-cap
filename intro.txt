@@ -1,0 +1,76 @@
+
+
+ref : http://crockford.com/
+
+--------------------------------------------------------------------------
+.js-intro
+---------------
+
+    - scripting-lang for web-pages in browser-envi
+    +
+    - server-side lang on Node.js (javascript runtime)
+
+--------------------------------------------------------------------------
+
+.js-features    
+---------------
+
+    - FP + OOP
+    - dynamic 
+
+    - all IO-operations are non-blocking
+    - single-threaded process , can execute concurrent actions due to non-blocking IO
+
+----------------------------------------------------------------------------
+
+
+how to run .js-program ?
+
+ => using javascript-runtime/engine
+
+browser-envi
+    1. chrome  (v8 -> c++ )
+    2. firefox (rhino/spider -> java)
+    3. IE/Edge ( chakra )
+    4. safari  ( nitro)
+    ...
+other envi
+    1. Node.js ( v8 ) 
+    2. JVM     ( rhino / nashorn )
+    3. Apache CouchDB
+    ...
+
+------------------------------------------------
+javascript-lang is based on 'ECMAScript spec'
+
+    latest release : ES6
+------------------------------------------------
+    
+    
+
+------------------------------------------------
+
+'Hello World'
+
+------------------------------------------------
+
+
+JS-topics
+---------
+level-1 :
+    - data-types
+    - scopes or execution-contexts
+    - FP in javascript
+    - OOP in javascript
+level-2 :
+    - ES6 new-syntax    
+    - ES6 new-apis
+    - ES modules
+    - concurrency model using Event-Loop
+    - Async apis ( Promise-api & RxJS )
+Level-3 :
+    - Typescript    
+------------------------------------------------------------    
+
+
+    
