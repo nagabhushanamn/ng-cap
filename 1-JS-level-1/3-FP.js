@@ -19,9 +19,7 @@
               => function-obj created at scope-execution phase
               => we can invoke after function-expression
 
-
 */
-
 
 //----------------------------------------------------
 
@@ -251,6 +249,7 @@ Functions as Values
 */
 
 // sef-executable function pattern / IIFE  ( module design patern )
+
 // const counter = (function () {
 //     let count = 0; // private
 //     // public
@@ -280,7 +279,6 @@ Functions as Values
 //----------------------------------------------------
 // a. static function-binding
 //----------------------------------------------------
-
 
 // let p1 = {
 //     name: 'Nag',
@@ -340,7 +338,7 @@ Functions as Values
 // empSayName('hi', 'chn');
 
 //----------------------------------------------------
-// summary => function-binding
+// function-binding ==> summary
 
 // let func = function () {
 //     console.log(this);
@@ -353,8 +351,6 @@ Functions as Values
 // func.call(o2); // dynamic function-binding
 
 //----------------------------------------------------
-
-
 // Quiz
 // let pName = "global";
 // let person = {
@@ -381,27 +377,31 @@ Functions as Values
 
 */
 //----------------------------------------------------
-
 // Quiz
 
-let tnr = {
-    name: 'Nag',
-    doTeach: function () {
-        console.log(this.name + " teching .js");
-        let notes = ".js-notes";
-        let self = this;
-        let doLearn = function () {
-            console.log(this.name + " learning  from " + self.name);
-        }
-        console.log('teaching ends');
-        return doLearn;
-    }
-};
-let emp = { name: 'ganesh' }
-// today
-let learnFunc = tnr.doTeach();
-learnFunc.call(emp)
-//tomorrow
-let tempTnr = { name: 'Praveen' }
-learnFunc = tnr.doTeach.call(tempTnr)
-learnFunc.call(emp);
+// const tnr = {
+//     name: 'Nag',
+//     doTeach: function () {
+//         console.log(this.name + " teching .js");
+//         let notes = ".js-notes";
+//         let self = this;
+//         let doLearn = function () {
+//             console.log(this.name + " learning  from " + self.name);
+//         }
+//         console.log('teaching ends');
+//         return doLearn;
+//     }
+// };
+// let emp = { name: 'cap' }
+// // today
+// let learnFunc = tnr.doTeach();
+// learnFunc.call(emp)
+// //tomorrow
+// let tempTnr = { name: 'Praveen' }
+// learnFunc = tnr.doTeach.call(tempTnr)
+// learnFunc.call(emp);
+
+//----------------------------------------------------
+
+
+
