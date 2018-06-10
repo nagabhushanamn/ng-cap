@@ -1,0 +1,10 @@
+
+//-----------------------------------------------
+imp-note:
+    =>on event , event handler always executes asyn
+//-----------------------------------------------
+
+
+Async APIs
+
+    -> promise api  ( part of es6 )

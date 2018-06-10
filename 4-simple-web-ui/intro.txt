@@ -1,0 +1,121 @@
+
+
+
+
+web tech
+------------------------------------------------------
+    HTML ==> content
+    CSS  ==> style
+    JavaScript ==> behavior
+------------------------------------------------------
+
+
+what .js-lang can do with HTML-page in browser-envi?
+
+using browser provided web-APIs,
+JavaScript-lang can bring any dynamic activity/data to web-page
+
+=>browser web-APIs  ==> are based on 'w3c' recommendations 
+=>browser implemented all web-APIs natively & abstracted as JavaScript objects & functions
+
+browser-APIs  :
+    ==> DOM, XHR/fetch,Timer,....
+
+using DOM
+-----------
+ -> can create,retreive,update,delete HTML elements
+ -> can change element's inner text/html content 
+ -> can change element's attributes/properties
+ -> can change element's styles ( css )
+ -> can listen events on elements
+ -> can validate form-fields 
+ -> can create rich UI-components
+ ....
+using XHR/fetch
+---------------
+ -> can communicate with server-side programs async ( AJAX )
+
+using TimerAPI
+---------------
+ -> can execute any action on timeout/time-interval
+
+HTML-5 : New APis
+---------------
+
+=> https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5 
+
+------------------------------------------------------   
+
+
+plain-js ( our-code ) with browser-apis : problems
+--------------------------------------------------
+
+=> browser compatability issues
+=> memory issues ( i.e clean un-used DOM elements)
+=> performance issues ( i.e DOM query/changes should be minimal)
+=> data-binding is manual
+=> too much code for simple operations
+=> code organizations is too difficult
+
+------------------------------------------------------   
+server-side page techonologies
+------------------------------------------------------   
+
+  ==> JSP , PHP , ASP.net , etc.......
+
+   problems:
+    => on every req, server shud re-construct same UI layout with different content , keeping client state
+    => on every resp, we r sending same resources ( css, js , images , fonts ) over n/w , increase n/w bandwidth
+    => on every resp, browser re-loads current page with new-page
+
+------------------------------------------------------    
+
+
+
+soln :
+
+ using third-party's JavaScript lib & F.Ws
+
+
+ 1. jQuery
+
+ MVC/MVVM based javascript lib & f.ws
+
+ 2. backbone , Marionet
+ 3. emberjs
+ 4. AngularJS from google-team
+ 5. knockout
+ 6. dojo
+ 7. extjs from sencha
+ ..........
+
+ component based archtecture  based on 'w3c' proposal
+
+ 8. React.js from facebook-team : v16
+ 9. Angular  : v6  ( our course )
+ 10. Aurelia
+ 11. Vue
+ 12. PolymerJS
+ 13. EMberJS v2
+ .....
+
+
+ --------------------------------------------------------
+
+ .js-lang
+
+    => all IO operations are non-blocking
+    => single-thread process , but we can do  concurrent executions dute to non-blocking IO
+
+---------------------------------------------------------
+ browser e.g chrome
+
+    1. javascript-runtime/engine  ( es spec )
+        - call-stack   : to call functions 
+        - heap         : to hold objects 
+    2. web-apis i.e DOM,XHR,Timer,...  ( w3c recoomendations )     
+    3. Event-Queue
+    4. Event-Loop
+
+ ---------------------------------------------------------   
+

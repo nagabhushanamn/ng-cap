@@ -1,0 +1,70 @@
+
+
+-----------------------------------------------------------
+.js-developement, without module-standards & module-loader
+    => global-naming collisions
+    => loading dependency modules in order.
+-----------------------------------------------------------
+
+from third-parties , we got module some module-standards & loaders
+
+    => AMD ( Async Module Definition ) spec
+
+        -define()
+        -require()
+
+        loader(s) ==> e,g Require.js
+
+    => commonJS
+    => UMD
+        loader(s) ==> System.js
+
+       ....... 
+---------------------------------------------------------
+
+commonJS  module-standard 
+
+    -> simple approach
+
+    rules :       
+
+        ==> every .js file is module
+        ==> all var & functions in .js file , are private by default
+        ==> to abstract/export any member to other modules , use 'module.exports' object
+        ==> to require/import any module , use 'require()' function
+        ==> we xan group related modules into package with description file ( package.json)
+
+    Node.js runtime uses this standard as default-module standard 
+
+----------------------------------------------------------   
+
+NPM ( Node Package Manager )
+
+    => cli tool , runs on Node.js runtime
+
+   what we need ?
+
+   => to publish/get or install javascript-packages from NPM-repository 
+
+----------------------------------------------------------
+
+From ECMAScript,
+
+in ES6 version , we got official module standards ( es modules)
+
+rules
+--------
+    ==> every .js file is module
+    ==> all var & functions in .js file , are private by default
+    ==> to abstract/export any member to other modules , use 'export' keyword
+    ==> to require/import any module , use 'import' keyword
+    ==> we xan group related modules into package with description file ( package.json)
+
+-----------------------------------------------------------------
+
+=>neither browser or node.js will support es module standards,
+=>we must compile them to browser use (using either babel & typescript compiler)
+
+
+-----------------------------------------------------------------
+
