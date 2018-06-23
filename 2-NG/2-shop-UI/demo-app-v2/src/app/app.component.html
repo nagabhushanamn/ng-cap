@@ -1,0 +1,15 @@
+<div class="container">
+    <nav class="navbar navbar-light bg-primary">
+        <a class="navbar-brand" href="#">{{title}}</a>
+    </nav>
+
+    <hr/>
+    <hr/>
+
+    <div class="list-group">
+        <div *ngFor="let product of products; let idx=index" class="list-group-item">
+            <app-product [idx]="idx" [product]="product"></app-product>
+        </div>
+    </div>
+
+</div>

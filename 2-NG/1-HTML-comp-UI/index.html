@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body class="container">
+    <hr/>
+    <h1>HTML components</h1>
+    <hr/>
+
+    <div id="box" class="alert alert-info">
+        <input id="inp1" type="number" onchange="handleChange()" />
+        <hr/>
+        <span id="displayCount" class="badge badge-primary">0</span>
+    </div>
+
+    <script>
+        let inp1 = document.getElementById('inp1');
+        let count = 0;
+        setInterval(() => {
+            count++;
+            inp1.value = count;
+            inp1.dispatchEvent(new Event('change'));
+        }, 2000);
+        function handleChange() {
+            document.getElementById('displayCount').innerText = count;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<hr/>
+<hr/>
+<div class="container">
+  <div class="card">
+    <div class="card-header">App component :
+      <span class="badge badge-danger">{{totalCount}}</span>
+    </div>
+    <div class="card-body">
+      <app-action-button *ngFor="let n of nums" value="{{n}}" (hit)="incrementTotalCount($event)"></app-action-button>
+      <div style="clear: both;">
+        <hr/>
+        <app-count-display [value]="totalCount"></app-count-display>
+      </div>
+    </div>
+
+  </div>
+</div>

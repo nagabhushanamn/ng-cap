@@ -5,12 +5,17 @@
 var myFunctions = [];
 var menu = ['idly', 'vada', 'poori']
 //----------------------------------------------
-for (var i = 0; i < menu.length; i++) {
-    var item = menu[i];
+
+function getF(i, item) {
     var f = function () {
         console.log(i + "->" + item);
     }
-    myFunctions.push(f);
+    return f;
+}
+
+for (var i = 0; i < menu.length; i++) {
+    var item = menu[i];
+    myFunctions.push(getF(i, item));
 }
 //----------------------------------------------
 myFunctions[0]();

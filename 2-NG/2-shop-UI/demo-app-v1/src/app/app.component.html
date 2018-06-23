@@ -1,0 +1,40 @@
+<div class="container">
+    <nav class="navbar navbar-light bg-primary">
+        <a class="navbar-brand" href="#">{{title}}</a>
+    </nav>
+
+    <hr/>
+    <hr/>
+
+    <div class="list-group">
+        <div *ngFor="let product of products; let idx=index" class="list-group-item">
+            <div class="row">
+                <div class="col-3 col-sm-3 col-md-3">
+                    <img [src]="product.image" class="img-fluid" />
+                </div>
+                <div class="col-9 col-sm-9 col-md-9">
+                    <span class="badge badge-dark">{{idx+1}}</span>
+                    <h5>{{product.name}}</h5>
+                    <h6>&#8377;{{product.price}}</h6>
+                    <button *ngIf="product.canBuy" class="btn btn-sm btn-primary">buy</button>
+                    <hr/>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link" [class.active]="currentTab===1"  href="#" (click)="changeTab(1,$event)">Description</a>
+                        </li>
+                        <li class="nav-item">
+                            <a [ngClass]="{'nav-link':true,active:currentTab===2}" href="#" (click)="changeTab(2,$event)">Specification</a>
+                        </li>
+                        <li class="nav-item">
+                            <a [ngClass]="{'nav-link':true,active:currentTab===3}" href="#" (click)="changeTab(3,$event)">Reviews</a>
+                        </li>
+                    </ul>
+                    <div *ngIf="currentTab===1">{{product.description}}</div>
+                    <div *ngIf="currentTab===2">Not Yet</div>
+                    <div *ngIf="currentTab===3">None Yet</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

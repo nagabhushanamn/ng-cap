@@ -1,0 +1,32 @@
+
+
+------------------------------------------
+NG - topics
+------------------------------------------
+
+-----------------------------------------------------------------------
+data-binding
+-----------------------------------------------------------------------
+
+    4 ways
+    1. interpolation   ( one-way)
+        syntax:   {{expression}}
+
+    2. property binding ( one-way )    
+        syntax: <element [prop-name]="expression"/>
+
+    3. event binding
+        syntax: <element  (event-name)="handler()"/>    
+
+-----------------------------------------------------------------------
+directives
+-----------------------------------------------------------------------
+    3 types
+    1. component   ==> directive + template ( new-ui piece )
+   
+    2. structural  ==> change existing DOM structure
+        e.g ngFor,ngIf,ngSwitch
+   
+    3. attribute-level 
+        e.g ngClass
+-----------------------------------------------------------------------
