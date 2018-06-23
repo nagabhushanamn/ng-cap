@@ -1,0 +1,57 @@
+<div class="col-sm-6 col-md-6">
+  <div class="card">
+    <div class="card-header bg-primary">Employee Form - using TemplateDriven module</div>
+    <div class="card-body">
+      <form #employeeForm="ngForm" (submit)="saveEmployee(employeeForm)">
+        <div class="form-group">
+          <label> First Name</label>
+          <input required 
+                 class="form-control" 
+                 [ngClass]="{'is-invalid':firstNameVar.invalid && firstNameVar.touched}"
+                 [(ngModel)]="employeeModel.firstName" 
+                 name="firstName" 
+                 #firstNameVar="ngModel" />
+            <div class="invalid-feedback">
+              Please provide firstName
+            </div>      
+        </div>
+        <div class="form-group">
+          <label> Last Name</label>
+          <input class="form-control" 
+                 [(ngModel)]="employeeModel.lastName"  
+                 name="lastName" />
+        </div>
+        <button type="button" (click)="loadEmployee()">Load employee</button>
+        <button>Save</button>
+      </form>
+      <hr/>
+
+      <!-- <pre class="">
+      is employeeForm pristine : {{employeeForm.pristine}}
+      is employeeForm dirty    : {{employeeForm.dirty}}
+      is employeeForm valid    : {{employeeForm.valid}}
+      is employeeForm invalid  : {{employeeForm.invalid}}
+      is employeeForm untouched: {{employeeForm.untouched}}  
+      is employeeForm touched  : {{employeeForm.touched}}  
+      </pre>
+    -->
+      <!-- <pre class="">
+      is firstName pristine    : {{firstNameVar.pristine}}
+      is firstName dirty       : {{firstNameVar.dirty}}
+      is firstName valid       : {{firstNameVar.valid}}
+      is firstName invalid     : {{firstNameVar.invalid}}
+      is firstName untouched   : {{firstNameVar.untouched}}  
+      is firstName touched     : {{firstNameVar.touched}}  
+      </pre>  -->
+     
+      FormModel
+      <pre>
+      {{employeeForm.value|json}}
+      </pre>
+      DataModel
+      <pre>
+      {{employeeModel|json}}
+      </pre>
+    </div>
+  </div>
+</div>

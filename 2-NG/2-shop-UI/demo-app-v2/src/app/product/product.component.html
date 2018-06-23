@@ -6,7 +6,7 @@
     <span class="badge badge-dark">{{idx+1}}</span>
     <h5>{{product.name}}</h5>
     <h6>&#8377;{{product.price}}</h6>
-    <button *ngIf="product.canBuy" class="btn btn-sm btn-primary">buy</button>
+    <button (click)="handleBuy()" *ngIf="product.canBuy" class="btn btn-sm btn-primary">buy</button>
     <hr/>
     <ul class="nav nav-tabs">
       <li class="nav-item">
@@ -26,7 +26,7 @@
         <app-review [review]="review"></app-review>
       </div>
       <hr/>
-      <app-review-form></app-review-form>
+      <app-review-form (onNewReview)="addNewReview($event)"></app-review-form>
     </div>
   </div>
 </div>

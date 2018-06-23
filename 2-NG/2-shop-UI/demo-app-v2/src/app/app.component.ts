@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'shop-IT';
+  isCartOpen: boolean = false;
+  cart: Array<any> = [];
   products: Array<any> = [
     {
       id: 111,
@@ -27,4 +29,25 @@ export class AppComponent {
       image: 'images/Mobile.png'
     }
   ];
+
+  /*
+    {
+      "111":{item,qty}
+    }
+  */
+
+  addToCart(event) {
+    let item = event.item;
+    let qty = event.qty;
+
+    // if (!this.cart[item.id]) {
+    //  this.cart = Object.assign({}, this.cart, { [item.id]: { item, qty } })
+    // }
+
+    this.cart.push(item)
+
+  }
+  toggleCart() {
+    this.isCartOpen = !this.isCartOpen
+  }
 }

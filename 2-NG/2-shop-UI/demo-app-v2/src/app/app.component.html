@@ -4,11 +4,18 @@
     </nav>
 
     <hr/>
+    <i class="fa fa-shopping-cart"></i> {{cart.length}} item(s) in cart |
+    <a (click)="toggleCart()" href="#">{{isCartOpen?'View Products':'View Cart'}}</a>
     <hr/>
-
-    <div class="list-group">
-        <div *ngFor="let product of products; let idx=index" class="list-group-item">
-            <app-product [idx]="idx" [product]="product"></app-product>
+    <div *ngIf="isCartOpen">
+        <app-view-cart [cart]="cart"></app-view-cart>
+    </div>
+    <hr/>
+    <div *ngIf="!isCartOpen">
+        <div class="list-group">
+            <div *ngFor="let product of products; let idx=index" class="list-group-item">
+                <app-product [idx]="idx" [product]="product" (onBuy)="addToCart($event)"></app-product>
+            </div>
         </div>
     </div>
 

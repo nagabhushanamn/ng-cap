@@ -1,0 +1,16 @@
+<div class="col-12 col-sm-12 col-md-12">
+  <div class="card">
+    <div class="card-header">Items in cart</div>
+    <div class="card-body">
+      <table class="table table-sm table-bordered">
+        <thead></thead>
+        <tbody>
+          <tr *ngFor="let item of cart">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>&#8377;{{item.price}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

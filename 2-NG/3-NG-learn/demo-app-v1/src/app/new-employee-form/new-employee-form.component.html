@@ -1,0 +1,53 @@
+<div class="col-sm-6 col-md-6">
+  <div class="card">
+    <div class="card-header bg-primary">Employee Form - using ReactiveForm module</div>
+    <div class="card-body">
+      <form [formGroup]="employeeForm">
+        <div class="form-group">
+          <label> First Name</label>
+          <input [ngClass]="{'is-invalid':employeeForm.get('firstName').invalid}" class="form-control" formControlName="firstName"
+          />
+        </div>
+        <div class="form-group">
+          <label> Last Name</label>
+          <input class="form-control" formControlName="lastName" />
+        </div>
+        <div class="card" formGroupName="emailGroup">
+          <div class="card-body">
+            <div class="form-group">
+              <label>Email</label>
+              <input class="form-control" formControlName="email" />
+            </div>
+            <div class="form-group">
+              <label>Confirm Email</label>
+              <input class="form-control" formControlName="cemail" />
+            </div>
+            <div *ngIf="employeeForm.get('emailGroup').errors?.match">
+              Email dosent match
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label> Are you indian?</label>
+          <input type="checkbox" formControlName="isIndian" />
+        </div>
+        <div class="form-group">
+          <label>Mobile</label>
+          <input [ngClass]="{'is-invalid':employeeForm.get('mobile').invalid}" class="form-control" formControlName="mobile" />
+        </div>
+        <div class="form-group">
+          <label>Send Notification : </label>
+          <input (click)="setNoti('email')" type="radio" value="email" formControlName="noti" /> &nbsp; Email
+          <input (click)="setNoti('sms')" type="radio" value="sms" formControlName="noti" /> &nbsp; SMS
+        </div>
+        <div class="form-group">
+          <label>Expected Salary ( range )</label>
+          <input [ngClass]="{'is-invalid':employeeForm.get('range').invalid}" class="form-control" formControlName="range" />
+        </div>
+        <button (click)="loadEmployee()" type="button">Load employee</button>
+        <button>Save</button>
+      </form>
+      <hr/>
+    </div>
+  </div>
+</div>

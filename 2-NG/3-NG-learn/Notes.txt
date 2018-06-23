@@ -1,0 +1,16 @@
+
+
+------------------------------------------
+NG-topics
+------------------------------------------
+
+
+ How to handle forms in NG?
+
+
+  2-ways
+
+    - template-driven   ==> FormsModule
+    - reactive forms    ==> ReactiveFormsModule ( most recommended )
+
+---------------------------------------------
