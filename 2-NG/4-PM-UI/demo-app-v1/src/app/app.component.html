@@ -1,0 +1,24 @@
+<div class="container">
+  <hr/>
+  <h1>
+    <a routerLink="">PM</a>
+  </h1>
+  <hr/>
+
+  <div class="row">
+    <div class="col-3 col-sm-3 col-md-3">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['products']">View All</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['products/new']">Add New</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-9 col-sm-9 col-md-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</div>

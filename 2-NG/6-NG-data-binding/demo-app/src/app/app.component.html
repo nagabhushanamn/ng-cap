@@ -1,0 +1,27 @@
+<div class="container">
+  <hr/>
+  <h1> NG - data-binding & change-detection strategies</h1>
+  <hr/>
+
+  <hr/>
+  <button (click)="processWithinAngularZone()" class="btn btn-primary">progress-bar ( in zone )
+  </button>
+  <span class="btn btn-danger">{{progress1}}</span>
+  <hr/>
+  <button (click)="processOutsideAngularZone()" class="btn btn-primary">progress-bar ( out zone )
+  </button>
+  <span class="btn btn-danger">{{progress2}}</span>
+
+  <hr/>
+
+  <button class="btn btn-primary" (click)="changePrice()">change product's price</button>
+  <hr/>
+  <app-product [product]="product"></app-product>
+
+  <hr/>
+
+  <button (click)="buy()" class="btn btn-primary">Buy</button>
+  <app-cart [cartStream]="cartStream"></app-cart>
+
+
+</div>

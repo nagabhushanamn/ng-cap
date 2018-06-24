@@ -13,7 +13,7 @@
     <hr/>
     <div *ngIf="!isCartOpen">
         <div class="list-group">
-            <div *ngFor="let product of products; let idx=index" class="list-group-item">
+            <div *ngFor="let product of products | slice:0:10; let idx=index" class="list-group-item">
                 <app-product [idx]="idx" [product]="product" (onBuy)="addToCart($event)"></app-product>
             </div>
         </div>

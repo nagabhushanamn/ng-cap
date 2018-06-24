@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms'
+import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms'
 @Component({
   selector: 'app-review-form',
   templateUrl: './review-form.component.html',
@@ -18,8 +18,16 @@ export class ReviewFormComponent implements OnInit {
     this.reviewForm = this.fb.group({
       stars: [5],
       author: ['', [Validators.required, Validators.email]],
-      body: ['', Validators.required]
+      body: ['', [Validators.required, badWordValidator]]
     });
+    // this.reviewForm.get('body').valueChanges
+    //   .subscribe(v => {
+    //     console.log(v);
+    //   })
+    // this.reviewForm.get('body').statusChanges
+    //   .subscribe(status => {
+    //     console.log(status);
+    //   })
   }
 
   toggleForm() {
@@ -33,4 +41,10 @@ export class ReviewFormComponent implements OnInit {
     }
   }
 
+}
+
+function badWordValidator(c: AbstractControl) {
+  let value = c.value;
+  if (value !== "bad") return null
+  return { bad: true }
 }

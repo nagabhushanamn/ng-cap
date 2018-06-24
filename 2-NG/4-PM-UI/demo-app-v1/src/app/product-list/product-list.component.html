@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-body">
+
+    <!-- <table class="table table-sm table-bordered">
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{product.name}}</td>
+          <td>{{product.price|currency:'INR'}}</td>
+          <td>{{product.makeDate|date}}</td>
+        </tr>
+      </tbody>
+    </table> -->
+
+
+    <p-table [value]="products">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Make-date</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+        <tr>
+          <td>{{product.name}}</td>
+          <td>{{product.price|currency:'INR'}}</td>
+          <td>{{product.makeDate|date}}</td>
+          <td><a [routerLink]="['edit',product.id]"><i class="fa fa-edit"></i></a></td>
+          <td><a (click)="delete(product.id,$event)" href="/#"><i class="fa fa-trash"></i></a></td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage" let-columns>
+        <tr>
+          <td [attr.colspan]="5">
+            No records found
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <hr/>
+    <router-outlet></router-outlet>
+  </div>
+</div>

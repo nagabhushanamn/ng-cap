@@ -1,0 +1,16 @@
+
+
+
+Unit-Testing  ( A A A )
+-------------------------
+
+  - Jasmine ( preferred )
+  - Mocha
+  - Jest
+  ...
+
+
+  test-runner : Karma
+
+  ----------------------------------
+
